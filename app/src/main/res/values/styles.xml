@@ -8,4 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="ProgressBarWhite">
+        <item name="colorAccent">@android:color/white</item>
+    </style>
 </resources>

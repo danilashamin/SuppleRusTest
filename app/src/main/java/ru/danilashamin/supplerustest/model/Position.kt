@@ -2,7 +2,7 @@ package ru.danilashamin.supplerustest.model
 
 import com.google.gson.annotations.SerializedName
 
-data class PositionInfo(
+data class Position(
     @SerializedName("PositionID") val positionId: String,
     @SerializedName("Content") val content: Content
 )

@@ -3,6 +3,7 @@ package ru.danilashamin.supplerustest
 import android.content.Context
 import androidx.multidex.MultiDex
 import androidx.multidex.MultiDexApplication
+import com.arellomobile.mvp.MvpAppCompatDialogFragment
 import ru.danilashamin.supplerustest.di.component.AppComponent
 import ru.danilashamin.supplerustest.di.component.DaggerAppComponent
 import ru.danilashamin.supplerustest.di.module.AppModule

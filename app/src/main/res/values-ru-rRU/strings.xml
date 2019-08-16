@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SuppleRusTest</string>
+    <string name="projects">Проекты</string>
+    <string name="please_wait">Пожалуйста, подождите…</string>
+    <string name="error_occured">Произошла ошибка, попробуйте позже.</string>
+</resources>

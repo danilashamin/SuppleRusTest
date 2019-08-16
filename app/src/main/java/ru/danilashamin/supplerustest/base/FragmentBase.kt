@@ -25,15 +25,17 @@ abstract class FragmentBase : MvpAppCompatFragment(), ViewBase {
 
     override fun showLoading() {
         if (!hasLoadingDialog()) {
-            LoadingDialogFragment.newInstance().show(childFragmentManager, LOADING_DIALOG_TAG)
+            val dialog = LoadingDialogFragment.newInstance()
+            dialog.isCancelable = false
+            dialog.show(childFragmentManager, LOADING_DIALOG_TAG)
         }
     }
 
     override fun hideLoading() {
         if (hasLoadingDialog()) {
-            (childFragmentManager?.findFragmentByTag(LOADING_DIALOG_TAG) as? LoadingDialogFragment)?.dismiss()
+            (childFragmentManager.findFragmentByTag(LOADING_DIALOG_TAG) as? LoadingDialogFragment)?.dismiss()
         }
     }
 
-    private fun hasLoadingDialog() = childFragmentManager.findFragmentByTag(LOADING_DIALOG_TAG) == null
+    private fun hasLoadingDialog() = childFragmentManager.findFragmentByTag(LOADING_DIALOG_TAG) != null
 }

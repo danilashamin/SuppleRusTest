@@ -15,6 +15,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import ru.danilashamin.supplerustest.BuildConfig
 import ru.danilashamin.supplerustest.api.Api
+import ru.danilashamin.supplerustest.api.ApiService
 import ru.danilashamin.supplerustest.utils.Constants.API_URL
 import ru.danilashamin.supplerustest.utils.TrustAllCertificatesManager
 import java.security.SecureRandom
@@ -24,6 +25,10 @@ import javax.net.ssl.X509TrustManager
 
 @Module
 class ApiModule {
+
+    @Provides
+    @Singleton
+    fun provideApiService(api: Api) = ApiService(api)
 
     @Singleton
     @Provides

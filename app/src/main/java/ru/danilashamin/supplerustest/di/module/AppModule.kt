@@ -11,4 +11,8 @@ class AppModule(private val context: Context) {
     @Singleton
     @Provides
     fun provideContext() = context
+
+    @Singleton
+    @Provides
+    fun provideResources() = context.resources
 }

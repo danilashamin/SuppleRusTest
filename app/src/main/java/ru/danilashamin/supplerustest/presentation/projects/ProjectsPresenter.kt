@@ -1,16 +1,13 @@
 package ru.danilashamin.supplerustest.presentation.projects
 
 import com.arellomobile.mvp.InjectViewState
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
 import ru.danilashamin.supplerustest.App
-import ru.danilashamin.supplerustest.api.Api
-import ru.danilashamin.supplerustest.api.keys.ProjectIDByCityRequestKeys
-import ru.danilashamin.supplerustest.api.request.Request
+import ru.danilashamin.supplerustest.api.ApiService
 import ru.danilashamin.supplerustest.base.PresenterBase
 import ru.danilashamin.supplerustest.model.Project
 import ru.danilashamin.supplerustest.ui.screens.projects.ProjectsView
 import ru.danilashamin.supplerustest.utils.MessageService
+import ru.danilashamin.supplerustest.utils.Screens
 import ru.terrakok.cicerone.Router
 import javax.inject.Inject
 
@@ -20,7 +17,7 @@ class ProjectsPresenter : PresenterBase<ProjectsView>() {
     lateinit var router: Router
 
     @Inject
-    lateinit var api: Api
+    lateinit var apiService: ApiService
 
     @Inject
     lateinit var messageService: MessageService
@@ -31,21 +28,22 @@ class ProjectsPresenter : PresenterBase<ProjectsView>() {
 
     override fun onFirstViewAttach() {
         disposeOnDestroy(
-            api.getProjectIDByCity(Request(ProjectIDByCityRequestKeys("SPB")))
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
+            apiService.getProjectIDByCity("SPB")
                 .doOnSubscribe { viewState.showLoading() }
                 .doOnComplete { viewState.hideLoading() }
                 .subscribe({
                     viewState.setProjects(it.body)
                 }, {
                     it.printStackTrace()
-                    viewState.showMessage(messageService.getErrorOnRequestMessage())
+                    viewState.showMessage(
+                        """${messageService.getErrorOnRequestMessage()}
+${it.message}"""
+                    )
                 })
         )
     }
 
     fun onProjectClicked(project: Project) {
-
+        router.navigateTo(Screens.ProjectScreen(project))
     }
 }
