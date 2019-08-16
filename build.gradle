@@ -19,8 +19,21 @@ allprojects {
     repositories {
         google()
         jcenter()
-        
+        maven { url 'https://jitpack.io' }
     }
+}
+
+ext {
+    ciceroneVersion = '5.0.0'
+    supportLibraryVersion = '28.0.0'
+    firebaseVersion = '11.8.0'
+    retrofitVersion = '2.5.0'
+    daggerVersion = '2.15'
+    moxyVersion = '1.5.5'
+    rxAndroidVersion = '2.1.1'
+    rxJavaVersion = '2.2.4'
+    rxPermissionsVersion = '0.10.2'
+    glideVersion = '4.9.0'
 }
 
 task clean(type: Delete) {
