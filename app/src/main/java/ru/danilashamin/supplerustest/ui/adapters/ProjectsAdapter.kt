@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.card_project.view.*
+import kotlinx.android.synthetic.main.card_project_name.view.*
 import ru.danilashamin.supplerustest.R
 import ru.danilashamin.supplerustest.model.Project
 
@@ -18,7 +18,7 @@ class ProjectsAdapter(private val listener: ProjectsAdapterListener) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProjectViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.card_project, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.card_project_name, parent, false)
         return ProjectViewHolder(view)
     }
 

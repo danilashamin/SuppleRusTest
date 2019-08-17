@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:id="@+id/projectNameContainer"
+        app:cardBackgroundColor="@color/colorBlue"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="10dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        app:contentPadding="20dp"
+        android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvProjectName"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:textColor="#FFF"
+            android:fontFamily="sans-serif"
+            android:textSize="20sp"
+            android:layout_height="wrap_content"
+            tools:text="Две палочки"/>
+</androidx.cardview.widget.CardView>

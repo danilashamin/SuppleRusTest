@@ -1,6 +1,7 @@
 package ru.danilashamin.supplerustest
 
 import android.content.Context
+import androidx.annotation.IntRange
 import androidx.multidex.MultiDex
 import androidx.multidex.MultiDexApplication
 import com.arellomobile.mvp.MvpAppCompatDialogFragment

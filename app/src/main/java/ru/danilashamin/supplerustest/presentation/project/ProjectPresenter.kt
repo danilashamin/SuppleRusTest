@@ -5,7 +5,7 @@ import ru.danilashamin.supplerustest.App
 import ru.danilashamin.supplerustest.api.ApiService
 import ru.danilashamin.supplerustest.base.PresenterBase
 import ru.danilashamin.supplerustest.model.Project
-import ru.danilashamin.supplerustest.ui.project.ProjectView
+import ru.danilashamin.supplerustest.ui.screens.project.ProjectView
 import ru.danilashamin.supplerustest.utils.MessageService
 import javax.inject.Inject
 
@@ -25,7 +25,7 @@ class ProjectPresenter(private val project: Project) : PresenterBase<ProjectView
             .doOnSubscribe { viewState.showLoading() }
             .doOnComplete { viewState.hideLoading() }
             .subscribe({
-                //                viewState.setProjects(it.body)
+                viewState.setPositions(it.body)
             }, {
                 it.printStackTrace()
                 viewState.showMessage(

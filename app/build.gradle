@@ -78,5 +78,6 @@ dependencies {
     kapt "com.github.bumptech.glide:compiler:$rootProject.ext.glideVersion"
 
     implementation 'com.android.support:multidex:1.0.3'
+    implementation project(path: ':StackLayoutManager')
 
 }

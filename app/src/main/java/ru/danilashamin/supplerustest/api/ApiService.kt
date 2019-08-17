@@ -38,8 +38,8 @@ class ApiService(private val api: Api) {
             }
     }
 
-    fun getImage(imageSize: String, objectId: String): Observable<Response<ImageInfo>> {
-        return api.getImage(Request(imageSize, objectId))
+    fun getImage(imageSize: String, imageId: String): Observable<Response<ImageInfo>> {
+        return api.getImage(Request(imageSize, imageId))
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .flatMap {

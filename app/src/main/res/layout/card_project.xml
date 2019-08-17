@@ -1,26 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:id="@+id/projectNameContainer"
-        app:cardBackgroundColor="@color/colorBlue"
-        app:cardElevation="10dp"
-        app:cardCornerRadius="10dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:foreground="?attr/selectableItemBackground"
-        app:contentPadding="20dp"
-        android:layout_height="wrap_content">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:background="@drawable/rectangle_white"
+              android:layout_width="320dp"
+              android:padding="20dp"
+              android:gravity="center"
+              android:layout_height="320dp">
+    <ru.danilashamin.supplerustest.ui.custom.view.SquareImageView
+            android:id="@+id/ivPositionImage"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            tools:src="@drawable/ic_launcher_background"/>
 
     <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvProjectName"
+            android:id="@+id/tvPositionName"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
-            android:gravity="center"
-            android:textColor="#FFF"
-            android:fontFamily="sans-serif"
-            android:textSize="20sp"
             android:layout_height="wrap_content"
-            tools:text="Две палочки"/>
-</androidx.cardview.widget.CardView>
+            android:gravity="center"
+            android:minLines="2"
+            android:maxLines="2"
+            android:ellipsize="end"
+            tools:text="Lorem Ipsum"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPositionDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:padding="10dp"
+            android:fontFamily="sans-serif"
+            android:minLines="2"
+            android:background="@drawable/position_description_bg"
+            android:gravity="center"
+            android:ellipsize="end"
+            tools:text="wefwoiufwiubgipuwbge wefwefwefwefwf"/>
+
+</LinearLayout>

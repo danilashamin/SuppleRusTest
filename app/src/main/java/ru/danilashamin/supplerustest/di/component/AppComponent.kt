@@ -10,6 +10,7 @@ import ru.danilashamin.supplerustest.presentation.project.ProjectPresenter
 import ru.danilashamin.supplerustest.presentation.projects.ProjectsPresenter
 import ru.danilashamin.supplerustest.ui.custom.MarginItemDecoration
 import ru.danilashamin.supplerustest.ui.screens.main.MainActivity
+import ru.danilashamin.supplerustest.utils.image.ImageLoader
 import javax.inject.Singleton
 
 @Singleton
@@ -24,4 +25,6 @@ interface AppComponent {
     fun inject(marginItemDecoration: MarginItemDecoration)
 
     fun inject(projectPresenter: ProjectPresenter)
+
+    fun inject(imageFetcher: ImageLoader.ImageFetcher)
 }
