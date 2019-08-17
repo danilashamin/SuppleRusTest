@@ -1,6 +1,7 @@
 package com.littlemango.stacklayoutmanager
 
 
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.IntRange
@@ -387,6 +388,7 @@ class StackLayoutManager(
         //位移百分比
         val movePercent = getFirstVisibleItemMovePercent()
 
+        Log.d("SCROLL", "movePercent = $movePercent")
         for (i in lastVisiblePosition downTo firstVisiblePosition) {
             val view = recycler.getViewForPosition(i)
 
@@ -401,8 +403,10 @@ class StackLayoutManager(
             mAnimation?.doAnimation(movePercent, view, i - firstVisiblePosition)
 
             //TODO добавить прозрачность
-            if (i != firstVisiblePosition) {
-                view.alpha = 0.2F
+            if (i == firstVisiblePosition + 1) {
+                view.alpha = movePercent + 0.8F
+            } else if (i != firstVisiblePosition + 1 && i != firstVisiblePosition) {
+                view.alpha = 0.8F
             }
         }
 

@@ -21,6 +21,11 @@ class ProjectPresenter(private val project: Project) : PresenterBase<ProjectView
     }
 
     override fun onFirstViewAttach() {
+        viewState.setProjectName(project.projectName)
+        loadPositions()
+    }
+
+    private fun loadPositions() {
         disposeOnDestroy(apiService.getPositions(project.projectId)
             .doOnSubscribe { viewState.showLoading() }
             .doOnComplete { viewState.hideLoading() }

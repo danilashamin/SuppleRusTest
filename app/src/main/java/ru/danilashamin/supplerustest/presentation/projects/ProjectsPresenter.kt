@@ -27,6 +27,10 @@ class ProjectsPresenter : PresenterBase<ProjectsView>() {
     }
 
     override fun onFirstViewAttach() {
+        loadProjects()
+    }
+
+    private fun loadProjects() {
         disposeOnDestroy(
             apiService.getProjectIDByCity("SPB")
                 .doOnSubscribe { viewState.showLoading() }

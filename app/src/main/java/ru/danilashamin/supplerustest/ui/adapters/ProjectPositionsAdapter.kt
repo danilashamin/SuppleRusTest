@@ -43,7 +43,7 @@ class ProjectPositionsAdapter : RecyclerView.Adapter<ProjectPositionsAdapter.Pos
 
             val description = position?.content?.description
 
-            if (description?.isEmpty() == true) {
+            if (description?.isEmpty() == true || description?.equals(" ") == true) {
                 tvPositionDescription.visibility = View.GONE
             } else {
                 tvPositionDescription.text = description

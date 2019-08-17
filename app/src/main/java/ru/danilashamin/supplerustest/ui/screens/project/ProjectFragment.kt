@@ -34,7 +34,7 @@ class ProjectFragment : FragmentBase(), ProjectView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        val layoutManager = StackLayoutManager(StackLayoutManager.ScrollOrientation.BOTTOM_TO_TOP, 2)
+        val layoutManager = StackLayoutManager(StackLayoutManager.ScrollOrientation.BOTTOM_TO_TOP, 3)
 
         layoutManager.setItemOffset(50)
 
@@ -44,6 +44,10 @@ class ProjectFragment : FragmentBase(), ProjectView {
 
     override fun setPositions(positions: List<Position>) {
         positionsAdapter.positions = positions
+    }
+
+    override fun setProjectName(projectName: String) {
+        tvProjectName.text = projectName
     }
 
     @ProvidePresenter

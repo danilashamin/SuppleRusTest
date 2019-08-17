@@ -9,4 +9,7 @@ interface ProjectView : ViewBase {
 
     @StateStrategyType(AddToEndSingleStrategy::class)
     fun setPositions(positions: List<Position>)
+
+    @StateStrategyType(AddToEndSingleStrategy::class)
+    fun setProjectName(projectName: String)
 }
